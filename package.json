@@ -1,0 +1,80 @@
+{
+    "name": "ovgso-cdpp-components",
+    "version": "0.1.0",
+    "private": true,
+    "main": "src/lib/modules/index.js",
+    "scripts": {
+        "install:roll": " npm i && rm -rf ./node_modules/rollup-plugin-vue && npm i rollup-plugin-vue@5.1.4",
+        "serve": "vue-cli-service serve src/demo/main.js",
+        "build": "vue-cli-service build",
+        "deploy": " webpack  --config deploy.config.js --mode none && rm -rf ./dist",
+        "build:module": "rm -rf ./modules  && rollup --config rollupBuildSingleComponent.config.js -f esm ",
+        "build:modules": "rm -rf ./modules && rollup --config rollupBuildAllComponents.config.js",
+        "build:modules:deploy": "npm run build:modules && npm run deploy && rm -rf ./dist",
+        "lint": "vue-cli-service lint",
+        "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
+    },
+    "dependencies": {
+        "axios": "^0.19.2",
+        "core-js": "^3.6.4",
+        "dotenv": "^8.2.0",
+        "lodash": "^4.17.15",
+        "marked": "^0.8.0",
+        "moment": "^2.24.0",
+        "raw-loader": "^4.0.2",
+        "rollup": "^1.31.0",
+        "rollup-plugin-import-resolver": "^1.0.4",
+        "vue": "^2.6.11",
+        "vue-axios": "^2.1.5",
+        "vue-i18n": "^8.0.0",
+        "vue-router": "^3.1.5",
+        "vuelayers": "^0.11.28",
+        "vuetify": "^2.3.4",
+        "vuex": "^3.1.2"
+    },
+    "devDependencies": {
+        "@intlify/rollup-plugin-vue-i18n": "^0.1.0",
+        "@kazupon/vue-i18n-loader": "^0.3.0",
+        "@rollup/plugin-alias": "^3.0.1",
+        "@rollup/plugin-commonjs": "^12.0.0",
+        "@rollup/plugin-json": "^4.0.2",
+        "@rollup/plugin-node-resolve": "^7.1.1",
+        "@rollup/plugin-yaml": "^2.1.0",
+        "@vue/cli-plugin-babel": "~4.2.0",
+        "@vue/cli-plugin-eslint": "~4.2.0",
+        "@vue/cli-plugin-router": "~4.2.0",
+        "@vue/cli-plugin-vuex": "~4.2.0",
+        "@vue/cli-service": "~4.2.0",
+        "babel-eslint": "^10.0.3",
+        "eslint": "^6.7.2",
+        "eslint-plugin-vue": "^6.1.2",
+        "lint-staged": "^9.5.0",
+        "rollup-plugin-analyzer": "^3.2.2",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-import-resolver": "^1.0.4",
+        "rollup-plugin-includepaths": "^0.2.3",
+        "rollup-plugin-node-polyfills": "^0.2.1",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-postcss": "^2.5.0",
+        "rollup-plugin-vue": "^5.1.4",
+        "rollup-pluginutils": "^2.8.2",
+        "sass": "^1.19.0",
+        "sass-loader": "^8.0.0",
+        "sedoo-static-upload-plugin": "^0.1.3",
+        "vue-cli-plugin-i18n": "~0.6.1",
+        "vue-cli-plugin-vuetify": "~2.0.5",
+        "vue-template-compiler": "^2.6.11",
+        "vuetify-loader": "^1.3.0",
+        "webpack-cdn-upload-plugin": "^2.1.0",
+        "webpack-cli": "^3.3.11"
+    },
+    "gitHooks": {
+        "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+        "*.{js,jsx,vue}": [
+            "vue-cli-service lint",
+            "git add"
+        ]
+    }
+}
