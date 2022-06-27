@@ -1,6 +1,6 @@
 # My project fake block
 
-## Use 
+## Usage 
 
 Ceci est un exemple de block de métadonnées
 
@@ -12,7 +12,7 @@ Ceci est un exemple de block de métadonnées
 | language | String | en | langue |
 
 
-## Example
+## Exemple
 
 ```html
 <MyProjectFakeBlock :metadata="metadata1" language="fr"></MyProjectFakeBlock>
