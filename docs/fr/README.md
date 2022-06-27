@@ -25,9 +25,9 @@ footer: Sedoo | 2022
 
 ```bash
 # download the project
-git clone -b develop https://git.icare.univ-lille1.fr/aeris/aeris-metadata-components.git
+git clone -b develop https://github.com/sedoo/sedoo-metadatabloc-example.git
 # install dependencies
-cd aeris-metadata-components && npm install
+cd sedoo-metadatabloc-example && npm install
 # use app
 npm run docs:dev
 ```
@@ -37,9 +37,9 @@ npm run docs:dev
 
 ```bash
 # download the project
-git clone -b develop https://git.icare.univ-lille1.fr/aeris/aeris-metadata-components.git
+git clone -b develop https://github.com/sedoo/sedoo-metadatabloc-example.git
 # install dependencies
-cd aeris-metadata-components && yarn install
+cd sedoo-metadatabloc-example && yarn install
 # use app
 yarn run docs:dev
 ```
