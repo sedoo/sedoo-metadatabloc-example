@@ -1,17 +1,20 @@
-<i18n  >
+<i18n>
 {
   "en": {
+    "message": "hello"
   },
   "fr": {
+     "message": "bonjour"
   }
 }
 </i18n>
 <template>
 <v-card v-if="isVisible"  :flat="true">
   <v-card-title>
-    {{$t('message')}} : {{metadata}} 
+    {{ $t('message') }}
   </v-card-title>
   <v-card-text>
+    Id : {{metadata.id}}
   </v-card-text>
 
 </v-card>
