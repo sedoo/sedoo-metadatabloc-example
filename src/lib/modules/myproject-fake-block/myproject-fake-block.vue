@@ -1,17 +1,15 @@
 <i18n  >
 {
   "en": {
-    
   },
   "fr": {
-   
   }
 }
 </i18n>
 <template>
 <v-card v-if="isVisible"  :flat="true">
   <v-card-title>
-    This is a test
+    {{$t('message')}} : {{metadata}} 
   </v-card-title>
   <v-card-text>
   </v-card-text>
@@ -29,9 +27,13 @@ export default {
   },
 
   props: {
+    metadata: {
+      type: Object,
+      default: null
+    },
+    
     language: {
-      type: String,
-      default: "en"
+      type: String
     }
     
   },
@@ -53,13 +55,13 @@ export default {
 
   watch: {
    
-     language(value) {
+    language(value) {
       this.$i18n.locale = value;
     },
   },
 
   created() {
-   this.$i18n.locale = this.language;
+    this.$i18n.locale = this.language;
   },
 
   methods: {
